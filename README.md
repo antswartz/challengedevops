@@ -1,31 +1,68 @@
-challengedevops
+apache Cookbook
 ===============
+TODO: Enter the cookbook description here.
 
-This github repo holds my apache setup challenge
+e.g.
+This cookbook makes your favorite breakfast sandwich.
 
-You have been tasked with putting up a new web server for your company, "I Can Haz Devops", a tech based startup that teaches cats how to support customer code. 
+Requirements
+------------
+TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-The task has some requirements: 
--It must run on the Rackspace Open Cloud 
--It must run on a Linux variant 
--It can use apache or nginx, which must start at boot time 
--It should serve a simple webpage saying that the site is under construction, and must have the servername displayed on the page along with your name. 
-    No bonus points for lolcats, but they are appreciated of course. 
-    This index.html should be dynamically created by your config mgmt system. 
+e.g.
+#### packages
+- `toaster` - apache needs toaster to brown your bagel.
 
--We should be able to stand up a new server with a minimal set of commands, and at any time, and with a repeatable process 
+Attributes
+----------
+TODO: List your cookbook attributes here.
 
---This means we need some sort of configuration management. You can use Chef, Chef-Solo, Hosted Chef. 
-    Create the server as part of the config management process (ie: use knife)
+e.g.
+#### apache::default
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>['apache']['bacon']</tt></td>
+    <td>Boolean</td>
+    <td>whether to include bacon</td>
+    <td><tt>true</tt></td>
+  </tr>
+</table>
 
---NO configuration files should be staticly just pushed onto the server. Your configuration management tool should be creating the config files when a new server is created.
+Usage
+-----
+#### apache::default
+TODO: Write usage instructions for each cookbook.
 
--Some standard sysadmin-y packages should be installed:
-    vim
-    screen
-    python
-    ruby and fog
-    curl
-    git
+e.g.
+Just include `apache` in your node's `run_list`:
 
- -You must use source control (i.e. git) in some way. 
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[apache]"
+  ]
+}
+```
+
+Contributing
+------------
+TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
+
+e.g.
+1. Fork the repository on Github
+2. Create a named feature branch (like `add_component_x`)
+3. Write your change
+4. Write tests for your change (if applicable)
+5. Run the tests, ensuring they all pass
+6. Submit a Pull Request using Github
+
+License and Authors
+-------------------
+Authors: TODO: List authors
