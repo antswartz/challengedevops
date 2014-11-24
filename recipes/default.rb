@@ -8,6 +8,12 @@
 #
 
 
+service 'iptables' do
+  action [ :stop ]
+end
+
+
+
 package 'httpd' do
   action :install
 end
@@ -15,6 +21,23 @@ end
 service 'httpd' do 
   action [ :enable, :start ] 
 end
+
+
+template '/etc/httpd/conf/httpd.conf' do
+  owner 'root'
+  group 'root'
+  mode '644'
+  source 'httpd.conf'
+end
+
+package 'php' do
+  action :install
+end
+
+service 'httpd' do
+  action [ :restart ]
+end
+
 
 package 'screen' do
   action :install
@@ -38,7 +61,7 @@ end
 
 #Calls the index file for Apache server
 
-cookbook_file '/var/www/html/index.html' do 
-  source 'index.html' 
+cookbook_file '/var/www/html/index.php' do 
+  source 'index.php' 
   mode '0644' 
 end 
